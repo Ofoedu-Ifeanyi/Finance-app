@@ -1,0 +1,8 @@
+export default function Reports() {
+  return (
+    <>
+      <h1>Reports</h1>
+      <p>Coming soon...</p>
+    </>
+  )
+}
