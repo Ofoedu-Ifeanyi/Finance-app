@@ -11,7 +11,6 @@ export default function Sidebar() {
   return (
     <aside className="sidebar">
       <div className="sidebar-brand">
-        <span>💰</span>
         <span>Finance</span>
       </div>
       <nav className="sidebar-nav">
