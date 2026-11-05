@@ -1,8 +1,3 @@
-// Storage layer — saves and loads all app data using localStorage.
-// This is the ONLY file in the app that talks to browser storage.
-// If we ever switch to a real backend (Supabase, Firebase), we change
-// only this file — everything else keeps working.
-
 // ---- Storage keys (the "names" of our database tables) ----
 const TRANSACTIONS_KEY = 'pf_transactions'
 const BUDGETS_KEY = 'pf_budgets'
