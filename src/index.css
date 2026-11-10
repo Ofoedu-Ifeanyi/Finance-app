@@ -417,3 +417,62 @@ body {
 .status-text.safe { color: #10b981; }
 .status-text.warning { color: #f59e0b; }
 .status-text.over { color: #ef4444; font-weight: 600; }
+
+/* ========== Reports ========== */
+.report-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.report-table th,
+.report-table td {
+  text-align: left;
+  padding: 0.65rem 0.75rem;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.report-table th {
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+/* Right-align the Amount column */
+.report-table td:last-child,
+.report-table th:last-child {
+  text-align: right;
+}
+
+.report-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* The Grand Total Row */
+.report-table .total-row td {
+  font-weight: 700;
+  border-top: 2px solid #d1d5db;
+  color: #111;
+  font-size: 0.95rem;
+}
+
+/* The Export Button */
+.export-btn {
+  margin-top: 1.5rem;
+  padding: 0.65rem 1.25rem;
+  background: #10b981;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.export-btn:hover {
+  background: #059669;
+}

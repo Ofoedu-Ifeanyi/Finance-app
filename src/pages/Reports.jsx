@@ -60,30 +60,7 @@ export default function Reports() {
         </div>
         <div className="chart-card">
             <h1>Expense by Category</h1>
-            <table className="report-table">
-                <thead>
-                    <tr>
-                        <th>Category</th>
-                        <th>Amount</th>
-                    </tr>
-                </thead>
-                <tbody> 
-                    {Object.entries(expenseCategoryTotals).map(([name, amount]) => (
-                        <tr key={name}>
-                            <td>{name}</td>
-                            <td>{formatMoney(amount)}</td>
-                        </tr>
-                    ))}
-                    <tr className="total-row">
-                        <td><strong>Total</strong></td>
-                        <td><strong>{formatMoney(expense)}</strong></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div className="chart-card">
-            <div className="chart-card">
-                <h2>Income by Source</h2>
+            <div style={{ overflowX: 'auto' }}>
                 <table className="report-table">
                     <thead>
                         <tr>
@@ -92,6 +69,46 @@ export default function Reports() {
                         </tr>
                     </thead>
                     <tbody> 
+                        {Object.keys(expenseCategoryTotals).length === 0 && (
+                        <tr>
+                            <td colSpan="2" style={{ textAlign: 'center', padding: '1rem', color: '#6b7280' }}>
+                            No expenses this month
+                            </td>
+                        </tr>
+                        )}
+                        {Object.entries(expenseCategoryTotals).map(([name, amount]) => (
+                            <tr key={name}>
+                                <td>{name}</td>
+                                <td>{formatMoney(amount)}</td>
+                            </tr>
+                        ))}
+                        <tr className="total-row">
+                            <td><strong>Total</strong></td>
+                            <td><strong>{formatMoney(expense)}</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div className="chart-card">
+            <div className="chart-card">
+                <h2>Income by Source</h2>
+                <div style={{ overflowX: 'auto' }}>
+                    <table className="report-table">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody> 
+                        {Object.keys(expenseCategoryTotals).length === 0 && (
+                        <tr>
+                            <td colSpan="2" style={{ textAlign: 'center', padding: '1rem', color: '#6b7280' }}>
+                            No expenses this month
+                            </td>
+                        </tr>
+                        )}
                         {Object.entries(incomeCategoryTotals).map(([name, amount]) => (
                             <tr key={name}>
                                 <td>{name}</td>
@@ -103,7 +120,8 @@ export default function Reports() {
                             <td><strong>{formatMoney(income)}</strong></td>
                         </tr>
                     </tbody>
-                </table>
+                    </table>
+                </div>
                 <button className="export-btn" onClick=        {handleExportCSV}>
                     Export to CSV
                 </button>

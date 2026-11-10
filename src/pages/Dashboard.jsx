@@ -13,11 +13,8 @@ import CategoryPie from '../components/CategoryPie'
 import MonthlyBar from '../components/MonthlyBar'
 
 export default function Dashboard() {
-  const [transactions, setTransactions] = useState([])
+  const [transactions, setTransactions] = useState(getTransactions)
 
-  useEffect(() => {
-    setTransactions(getTransactions())
-  }, [])
 
   const currentMonth = getMonthKey(new Date())
   const thisMonth = filterByMonth(transactions, currentMonth)
